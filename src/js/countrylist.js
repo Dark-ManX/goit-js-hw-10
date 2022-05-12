@@ -14,7 +14,7 @@ const createList = (name) => {
 };
 
 const createCard = (name) => {
-    name.map(country => {
+    return name.map(country => {
         refs.country.innerHTML = '';
         refs.countryContainer.innerHTML = (`
                         <img src="${country.flag}" width="100px"/>
