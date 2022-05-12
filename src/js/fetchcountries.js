@@ -19,17 +19,22 @@ export const fetchCountries = (name) => {
                     
                 }));
 
-            } else {
+            } else if (countries.length = 1) {
                 countries.map(country => {
-                    return refs.countryContainer.innerHTML = (`
+                    refs.country.innerHTML = '';
+                    refs.countryContainer.innerHTML = (`
                         <img src="${country.flag}" width="100px"/>
                         <h1>${country.name}</h1>
                         <p>${country.capital}</p>
                         <p>${country.population}</p>
                         `);
-                    
+                    return;
                 });
-            }
+            } 
         })
-        .catch(error => Notiflix.Notify.failure('Oops, there is no country with that name'));
+        .catch(error => {
+            refs.country.innerHTML = '';
+            refs.countryContainer.innerHTML = '';
+            return Notiflix.Notify.failure('Oops, there is no country with that name');
+        });
 }
