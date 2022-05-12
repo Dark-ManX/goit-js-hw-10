@@ -4,7 +4,7 @@ import Notiflix from 'notiflix';
 const createList = (name) => {
     return name.map(country => {
         refs.countryContainer.innerHTML = '';
-        return refs.country.insertAdjacentHTML('beforeend', `
+        refs.country.insertAdjacentHTML('beforeend', `
     <li class="li-item">
         <img src="${country.flag}" width="30px" class="li-item__img"/>${country.name}
     </li>
@@ -22,7 +22,6 @@ const createCard = (name) => {
                         <p>${country.capital}</p>
                         <p>${country.population}</p>
                         `);
-        return;
     });
 };
 
