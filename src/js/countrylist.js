@@ -2,17 +2,20 @@ import { refs } from "../index";
 import Notiflix from 'notiflix';
 
 export const fetchResult = (name) => {
-            if (name.length > 10) {
-                Notiflix.Notify.info("Too many matches found. Please enter a more specific name.");
+    if (name.length > 10) {
+        refs.country.innerHTML = '';
+        Notiflix.Notify.info("Too many matches found. Please enter a more specific name.");
             
-            } else if (1 < name.length && name.length <= 10) {
-                createList(name);
+    } else if (1 < name.length && name.length <= 10) {
+        refs.country.innerHTML = '';
+        createList(name);
 
-            } else if (name.length = 1) {
-                createCard(name);
+    } else if (name.length = 1) {
+        
+        createCard(name);
 
-            } 
-        }
+    }
+}
 
 const createList = (_name) => {
     return _name.map(({ flag, name }) => {
@@ -40,8 +43,15 @@ const createCard = (_name) => {
     });
 };
 
+const errorResult = (error) => {
+    refs.country.innerHTML = '';
+    refs.countryContainer.innerHTML = '';
+    return Notiflix.Notify.failure('Oops, there is no country with that name');
+}
+
 export default {
     fetchResult,
     createList,
     createCard,
+    errorResult,
 }
