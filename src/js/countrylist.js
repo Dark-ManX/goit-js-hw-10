@@ -10,17 +10,16 @@ export const fetchResult = (name) => {
         refs.country.innerHTML = '';
         createList(name);
 
-    } else if (name.length = 1) {
-        
+    } else if (name.length = 1) { 
         createCard(name);
-
+        
     }
 }
 
 const createList = (_name) => {
     return _name.map(({ flag, name }) => {
         refs.countryContainer.innerHTML = '';
-        return refs.country.insertAdjacentHTML('beforeend', `
+        refs.country.insertAdjacentHTML('beforeend', `
     <li class="li-item">
         <img src="${flag}" width="30px" class="li-item__img"/>${name}
     </li>
@@ -33,7 +32,7 @@ const createCard = (_name) => {
     return _name.map(({ flag, name, capital, population, languages }) => {
         refs.country.innerHTML = '';
         console.dir(_name)
-        return refs.countryContainer.innerHTML = (`
+        refs.countryContainer.innerHTML = (`
                         <img src="${flag}" width="100px"/>
                         <h1>${name}</h1>
                         <p>${capital}</p>
@@ -46,12 +45,10 @@ const createCard = (_name) => {
 const errorResult = (error) => {
     refs.country.innerHTML = '';
     refs.countryContainer.innerHTML = '';
-    return Notiflix.Notify.failure('Oops, there is no country with that name');
+    Notiflix.Notify.failure('Oops, there is no country with that name');
 }
 
 export default {
     fetchResult,
-    createList,
-    createCard,
     errorResult,
 }
