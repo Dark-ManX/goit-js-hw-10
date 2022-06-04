@@ -1,0 +1,41 @@
+.footer {
+    padding: 27px 0 32px;
+    background-color: black;
+
+    &__rights {
+        color: $footer-message;
+        margin-bottom: 7px;
+        font-size: 14px;
+        line-height: calc(22 / 14);
+    }
+
+    &-list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 23px;
+
+        &__item:not(:last-child) {
+            margin-right: 16px;
+        }
+
+        &__link {
+            color: $footer-list-color;
+            font-size: 13px;
+            line-height: calc(20 / 13);
+        }
+    }
+
+    &-social-list {
+        display: flex;
+        justify-content: center;
+
+        &__item:not(:last-child) {
+            margin-right: 18px;
+        }
+
+        &__link {
+
+        }
+    }
+}

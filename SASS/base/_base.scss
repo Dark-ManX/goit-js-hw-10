@@ -1,0 +1,73 @@
+@font-face {
+    font-family: "Helvetica";
+    font-style: normal;
+    font-weight: 400;
+    /* Браузер сначала попробует найти шрифт локально */
+    src: local("Helvetica"),
+        /* Если не получилось, загрузит woff2 */
+        url("/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"),
+        /* Если браузер не поддерживает woff2, загрузит woff */
+        url("/fonts/HelveticaNowDisplay-Regular.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Helvetica bold";
+    font-style: normal;
+    font-weight: 400;
+    /* Браузер сначала попробует найти шрифт локально */
+    src: local("Helvetica bold"),
+        /* Если не получилось, загрузит woff2 */
+        url("/fonts/HelveticaNowDisplay-Bold.woff2") format("woff2"),
+        /* Если браузер не поддерживает woff2, загрузит woff */
+        url("/fonts/HelveticaNowDisplay-Bold.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Helvetica black";
+    font-style: normal;
+    font-weight: 400;
+    /* Браузер сначала попробует найти шрифт локально */
+    src: local("Helvetica black"),
+        /* Если не получилось, загрузит woff2 */
+        url("/fonts/HelveticaNowDisplay-Black.woff2") format("woff2"),
+        /* Если браузер не поддерживает woff2, загрузит woff */
+        url("/fonts/HelveticaNowDisplay-Black.woff") format("woff");
+}
+
+body {
+    font-family: "Helvetica", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    color: $vacancies-text-color;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.section {
+    padding: 48px 0;
+    width: 100%;
+}
+
+.container {
+    padding: 0 20px;
+    margin: 0 auto;
+    max-width: 280px;
+
+    
+    @media screen and (min-width: 768px) {
+        max-width: 728px;
+    }
+
+    @media screen and (min-width: 1087px) {
+        max-width: 1260px;
+    }
+}
+
+.title {
+    font-family: 'Helvetica black';
+    font-weight: 900;
+    font-size: 32px;
+    line-height: calc(35 / 32);
+    color: $headers-text-color;
+}
